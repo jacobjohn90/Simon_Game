@@ -13,11 +13,24 @@ $(document).ready(function () {
             // gameRunning = true
             startGame()
             console.log('start clicked')
-            let i = 0
-            color = $()
-            changeColor()
-           
-        }
+            let interval = setInterval(function () {
+                for (i = 0; i <= aiArray.length; i++) {
+                    if (i == aiArray.length) {
+                        clearInterval(interval)
+                        return
+                    } else {
+                        id = aiArray[i]
+                        color = $('#' + id).attr('class')
+                        console.log(id + " " + color)
+                        changeColor(color)
+                    }
+
+
+                }
+        }, 1000)
+
+
+    }
     })
 
 })
@@ -30,7 +43,8 @@ let startGame = function () {
 }
 
 // Change color displayed
-let changeColor = function () {
+let changeColor = function (color) {
+    
 
 }
 

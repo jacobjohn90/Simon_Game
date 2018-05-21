@@ -13,7 +13,7 @@ body {
     height: 147.5px;
     width: 147.5px;
     border: 1px solid black;
-    background-color: red;
+    background-color: rgb(255, 0, 0);
     float: left;
     position: relative;
 }
