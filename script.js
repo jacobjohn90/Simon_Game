@@ -12,7 +12,7 @@ $(document).ready(function () {
         if (gameRunning == false) {
             // gameRunning = true
             startGame()
-            console.log('start clicked')
+            // console.log('start clicked')
             let interval = setInterval(function () {
                 for (i = 0; i <= aiArray.length; i++) {
                     if (i == aiArray.length) {
@@ -21,16 +21,16 @@ $(document).ready(function () {
                     } else {
                         id = aiArray[i]
                         color = $('#' + id).attr('class')
-                        console.log(id + " " + color)
+                        // console.log(id + " " + color)
                         changeColor(color)
                     }
 
 
                 }
-        }, 1000)
+            }, 1000)
 
 
-    }
+        }
     })
 
 })
@@ -44,7 +44,35 @@ let startGame = function () {
 
 // Change color displayed
 let changeColor = function (color) {
-    
+    if (color == 'red') {
+        $('.red').css('backgroundColor', '#ff6666')
+        $('.red').css('border', '1px solid white')
+    } if (color == 'green') {
+        $('.green').css('backgroundColor', '#66ff66')
+        $('.green').css('border', '1px solid white')
+    } if (color == 'blue') {
+        $('.blue').css('backgroundColor', '#0066ff')
+        $('.blue').css('border', '1px solid white')
+    } if (color == 'yellow') {
+        $('.yellow').css('backgroundColor', '#ffffcc')
+        $('.yellow').css('border', '1px solid white')
+    }
+    setTimeout(function () {
+        if (color == 'red') {
+            $('.red').css('backgroundColor', 'red')
+            $('.red').css('border', '1px solid black')
+        } if (color == 'green') {
+            $('.green').css('backgroundColor', 'green')
+            $('.green').css('border', '1px solid black')
+        } if (color == 'blue') {
+            $('.blue').css('backgroundColor', 'blue')
+            $('.blue').css('border', '1px solid black')
+        } if (color == 'yellow') {
+            $('.yellow').css('backgroundColor', 'yellow')
+            $('.yellow').css('border', '1px solid black')
+        }
+    }, 750)
+
 
 }
 
