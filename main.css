@@ -26,6 +26,12 @@ body {
     position: relative;
     border-radius: 150px 0 0 0;
 }
+.red:hover {
+    border: 1px solid white;
+}
+.red:active {
+    background-color: black;
+}
 
 .green {
     height: 147.5px;
@@ -36,6 +42,12 @@ body {
     position: relative;
     border-radius: 0 150px 0 0;
 }
+.green:hover {
+    border: 1px solid white;
+}
+.green:active {
+    background-color: black;
+}
 .blue {
     height: 147.5px;
     width: 147.5px;
@@ -44,6 +56,12 @@ body {
     float: left;
     position: relative;
     border-radius: 0 0 0 150px;
+}
+.blue:hover {
+    border: 1px solid white;
+}
+.blue:active {
+    background-color: black;
 }
 .yellow {
     height: 147.5px;
@@ -54,7 +72,12 @@ body {
     position: relative;
     border-radius: 0 0 150px 0;
 }
-
+.yellow:hover {
+    border: 1px solid white;
+}
+.yellow:active {
+    background-color: black;
+}
 .options {
     margin-left: 100px
 }
@@ -62,14 +85,14 @@ body {
     display: flex
 }
 .highlight {
-    background-color: white;
+    opacity: .4;
     border: 1px solid white;
 }
 .highlightClick {
     border: 1px solid white
 }
 
-#number {
+#scoreNumber {
     color: white;
     background-color: black;
     margin-left: 10px;

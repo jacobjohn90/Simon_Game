@@ -16,7 +16,7 @@ $(document).ready(function () {
             aiArray = []
             userArray = []
             score = 0
-            $('#number').text('0')
+            $('#scoreNumber').text('0')
             startGame() // star game function
 
 
@@ -36,7 +36,7 @@ let startGame = function () {
     for (let i = 0; i < aiArray.length; i++) {
         setTimeout(function () {
             id = aiArray[i]
-            console.log(id)
+            // console.log(id)
             color = $('#' + id).attr('class').split(" ")[0] //method found on stackoverflow
             console.log(color)
             changeColor(color)
@@ -46,34 +46,36 @@ let startGame = function () {
 
 // Change color displayed
 let changeColor = function (color) {
-    if (color == 'red') {
-        $('.red').css('backgroundColor', '#ff6666')
-        $('.red').css('border', '1px solid white')
-    } if (color == 'green') {
-        $('.green').css('backgroundColor', '#66ff66')
-        $('.green').css('border', '1px solid white')
-    } if (color == 'blue') {
-        $('.blue').css('backgroundColor', '#0066ff')
-        $('.blue').css('border', '1px solid white')
-    } if (color == 'yellow') {
-        $('.yellow').css('backgroundColor', '#ffffcc')
-        $('.yellow').css('border', '1px solid white')
-    }
+    $("." + color).toggleClass('highlight')
+    // if (color == 'red') {
+    //     $('.red').css('backgroundColor', '#ff6666')
+    //     $('.red').css('border', '1px solid white')
+    // } if (color == 'green') {
+    //     $('.green').css('backgroundColor', '#66ff66')
+    //     $('.green').css('border', '1px solid white')
+    // } if (color == 'blue') {
+    //     $('.blue').css('backgroundColor', '#0066ff')
+    //     $('.blue').css('border', '1px solid white')
+    // } if (color == 'yellow') {
+    //     $('.yellow').css('backgroundColor', '#ffffcc')
+    //     $('.yellow').css('border', '1px solid white')
+    // }
     setTimeout(function () {
-        if (color == 'red') {
-            $('.red').css('backgroundColor', 'red')
-            $('.red').css('border', '1px solid black')
-        } if (color == 'green') {
-            $('.green').css('backgroundColor', 'green')
-            $('.green').css('border', '1px solid black')
-        } if (color == 'blue') {
-            $('.blue').css('backgroundColor', 'blue')
-            $('.blue').css('border', '1px solid black')
-        } if (color == 'yellow') {
-            $('.yellow').css('backgroundColor', 'yellow')
-            $('.yellow').css('border', '1px solid black')
-        }
-    }, 500)
+    $("." + color).toggleClass('highlight')
+        // if (color == 'red') {
+        //     $('.red').css('backgroundColor', 'red')
+        //     $('.red').css('border', '1px solid black')
+        // } if (color == 'green') {
+        //     $('.green').css('backgroundColor', 'green')
+        //     $('.green').css('border', '1px solid black')
+        // } if (color == 'blue') {
+        //     $('.blue').css('backgroundColor', 'blue')
+        //     $('.blue').css('border', '1px solid black')
+        // } if (color == 'yellow') {
+        //     $('.yellow').css('backgroundColor', 'yellow')
+        //     $('.yellow').css('border', '1px solid black')
+        // }
+    }, 750)
 
 
 }
@@ -105,7 +107,7 @@ let arrayChecker = function () {
         } if (aiArray[i] == userArray[i]) {
             console.log('correct')
             score = userArray.length
-            $('#number').text(score)
+            $('#scoreNumber').text(score)
             nextRound = true
         }
     }
@@ -121,10 +123,19 @@ let arrayChecker = function () {
 
 let gameOver = function () {
     $('#number').text('##')
+    alert('Sorry, that was wrong. Press start to play again!')
 }
 
 //Hover effect
-// $('.button').hover(function(){
-//     color = $('.'+this).attr('class').split(" ")[0] //similar to previous method, but tweaked to make this work as well
-//     $('color').toggleClass('highlightClick')
+// $('.red').hover(function(){
+//     $('.red').toggleClass('highlightClick')
+// })
+// $('.green').hover(function(){
+//     $('.green').toggleClass('highlightClick')
+// })
+// $('.blue').hover(function(){
+//     $('.blue').toggleClass('highlightClick')
+// })
+// $('.yellow').hover(function(){
+//     $('.yellow').toggleClass('highlightClick')
 // })
