@@ -13,9 +13,11 @@ $(document).ready(function () {
     $('.startButton').click(function () {
         if (gameRunning == false) {
             // gameRunning = true
-            userArray=[]
+            aiArray = []
+            userArray = []
+            score = 0
+            $('#number').text('0')
             startGame() // star game function
-            // console.log('start clicked')
 
 
 
@@ -28,7 +30,6 @@ $(document).ready(function () {
 let startGame = function () {
     let randomNumber = Math.floor(Math.random() * 4)
     aiArray.push(randomNumber)
-    console.log(aiArray)
 
     // loop through aiArray
     // for each item, wait 1000
@@ -41,22 +42,6 @@ let startGame = function () {
             changeColor(color)
         }, 1000 * (i + 1))
     }
-
-    // let interval = setInterval(function () {
-    //     for (i = 0; i <= aiArray.length; i++) {
-    //         if (i == aiArray.length) {
-    //             clearInterval(interval)
-    //             return
-    //         } else {
-    //             id = aiArray[i]
-    //             color = $('#' + id).attr('class').split(" ")[0] //method found on stackoverflow
-    //             changeColor(color)
-    //         }
-    //     }
-
-
-    // }, 1000)
-    // userClick()
 }
 
 // Change color displayed
@@ -94,41 +79,52 @@ let changeColor = function (color) {
 }
 
 // Player Input
-// let picColor = 
 $('.button').click(function () {
     id = $(this).attr('id') //similar code to the one found on stackoverflow
-    console.log(id)
+    // console.log(id)
     userArray.push(Number(id))
-    console.log('user input is ' + userArray)
-    if (aiArray.length == userArray.length) {
-        arrayChecker()}
-})
+    console.log('user input is ', userArray)
+    if (userArray.length == aiArray.length) {
+        arrayChecker()
+    }}
+)
 
 
 // Checking if array's are the same
 
 let arrayChecker = function () {
-    
-        for (let i = 0; i < aiArray.length; i++) {
-         if (aiArray[i] !== userArray[i]) {
-            gameOver()
+    let nextRound = false
+    for (let i=0; i < aiArray.length ; i++) {    
+        // console.log("inside for")
+        console.log("i is: " + i, "userArray: " + userArray[i],"aiArray: " + aiArray[i],)
+        if (aiArray[i] !== userArray[i]) {
+            console.log("wrong")
+            nextRound = false
+            gameOver() 
             break
-         } else if (aiArray[i] == userArray[i]) {
+        } if (aiArray[i] == userArray[i]) {
             console.log('correct')
-            userArray = []
-            $('.score').html()
-            score += 1
+            score = userArray.length
             $('#number').text(score)
-            startGame()
-            break
+            nextRound = true
         }
+    }
     
-}}
+    if (nextRound === true) {
+        nextRound = false
+        userArray = []
+        startGame()
+    }
+}
 
 // GAMEOVER
 
 let gameOver = function () {
-    console.log('incorrect')
+    $('#number').text('##')
 }
 
 //Hover effect
+// $('.button').hover(function(){
+//     color = $('.'+this).attr('class').split(" ")[0] //similar to previous method, but tweaked to make this work as well
+//     $('color').toggleClass('highlightClick')
+// })

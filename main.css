@@ -54,10 +54,7 @@ body {
     position: relative;
     border-radius: 0 0 150px 0;
 }
-.highlight {
-    border: 1px solid white;
-    background-color: white;
-}
+
 .options {
     margin-left: 100px
 }
@@ -68,7 +65,7 @@ body {
     background-color: white;
     border: 1px solid white;
 }
-.hightlightClick {
+.highlightClick {
     border: 1px solid white
 }
 
