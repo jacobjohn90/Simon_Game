@@ -6,8 +6,10 @@ let userArray = []
 let gameRunning = false
 let id
 let color
+let score = 0
 // Computer input
 $(document).ready(function () {
+    // alert('Click start to begin game! Confused? Hit that Info button')
     $('.startButton').click(function () {
         if (gameRunning == false) {
             // gameRunning = true
@@ -86,7 +88,7 @@ let changeColor = function (color) {
             $('.yellow').css('backgroundColor', 'yellow')
             $('.yellow').css('border', '1px solid black')
         }
-    }, 750)
+    }, 500)
 
 
 }
@@ -94,7 +96,6 @@ let changeColor = function (color) {
 // Player Input
 // let picColor = 
 $('.button').click(function () {
-    // userClick()
     id = $(this).attr('id') //similar code to the one found on stackoverflow
     console.log(id)
     userArray.push(Number(id))
@@ -102,21 +103,7 @@ $('.button').click(function () {
     if (aiArray.length == userArray.length) {
         arrayChecker()}
 })
-    // id = $(this).attr('id') //similar code to the one found on stackoverflow
-    // console.log(id)
-    // userArray.push(Number(id))
-// let userClick = function () {
-    // $('.button').click(function () {
-        // id = $(this).attr('id') //similar code to the one found on stackoverflow
-        // console.log(id)
-        // userArray.push(Number(id))
-        // console.log('user input is ' + userArray)
-        // if (userArray.length == aiArray.length) {
-            // 
-            
-        // }
-    // })
-// }
+
 
 // Checking if array's are the same
 
@@ -129,6 +116,9 @@ let arrayChecker = function () {
          } else if (aiArray[i] == userArray[i]) {
             console.log('correct')
             userArray = []
+            $('.score').html()
+            score += 1
+            $('#number').text(score)
             startGame()
             break
         }
@@ -140,3 +130,5 @@ let arrayChecker = function () {
 let gameOver = function () {
     console.log('incorrect')
 }
+
+//Hover effect

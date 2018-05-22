@@ -3,12 +3,19 @@ body {
 }
 .container {
     text-align: center;
+    /* display: inline */
+}
+.board {
+    display: flex;
+    margin-top: 5%;
+    
 }
 .buttons {
     border: 5px solid black;
     height: 300px;
     width: 300px;
     border-radius: 300px;
+    margin-left: 30%;
 }
 .red {
     height: 147.5px;
@@ -46,4 +53,28 @@ body {
     float: left;
     position: relative;
     border-radius: 0 0 150px 0;
+}
+.highlight {
+    border: 1px solid white;
+    background-color: white;
+}
+.options {
+    margin-left: 100px
+}
+.score {
+    display: flex
+}
+.highlight {
+    background-color: white;
+    border: 1px solid white;
+}
+.hightlightClick {
+    border: 1px solid white
+}
+
+#number {
+    color: white;
+    background-color: black;
+    margin-left: 10px;
+    width: 30px;
 }
