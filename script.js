@@ -11,6 +11,7 @@ $(document).ready(function () {
     $('.startButton').click(function () {
         if (gameRunning == false) {
             // gameRunning = true
+            userArray=[]
             startGame() // star game function
             // console.log('start clicked')
 
@@ -29,14 +30,16 @@ let startGame = function () {
 
     // loop through aiArray
     // for each item, wait 1000
-    for (let i = 0; i <= aiArray.length; i++) {
+    for (let i = 0; i < aiArray.length; i++) {
         setTimeout(function () {
             id = aiArray[i]
-            color = $('#' + id).attr('class') //method found on stackoverflow
-            // console.log(color)
+            console.log(id)
+            color = $('#' + id).attr('class').split(" ")[0] //method found on stackoverflow
+            console.log(color)
             changeColor(color)
         }, 1000 * (i + 1))
     }
+
     // let interval = setInterval(function () {
     //     for (i = 0; i <= aiArray.length; i++) {
     //         if (i == aiArray.length) {
@@ -90,30 +93,47 @@ let changeColor = function (color) {
 
 // Player Input
 // let picColor = 
-let userClick = function () {
-    $('.button').click(function () {
-        id = $(this).attr('id') //similar code to the one found on stackoverflow
-        userArray.push(Number(id))
-        console.log('user input is ' + userArray)
-        if (userArray.length == aiArray.length) {
-            arrayChecker()
-            // return
-        }
-    })
-}
+$('.button').click(function () {
+    // userClick()
+    id = $(this).attr('id') //similar code to the one found on stackoverflow
+    console.log(id)
+    userArray.push(Number(id))
+    console.log('user input is ' + userArray)
+    if (aiArray.length == userArray.length) {
+        arrayChecker()}
+})
+    // id = $(this).attr('id') //similar code to the one found on stackoverflow
+    // console.log(id)
+    // userArray.push(Number(id))
+// let userClick = function () {
+    // $('.button').click(function () {
+        // id = $(this).attr('id') //similar code to the one found on stackoverflow
+        // console.log(id)
+        // userArray.push(Number(id))
+        // console.log('user input is ' + userArray)
+        // if (userArray.length == aiArray.length) {
+            // 
+            
+        // }
+    // })
+// }
 
 // Checking if array's are the same
 
 let arrayChecker = function () {
-    for (i = 0; i < aiArray.length; i++) {
-        if (aiArray[i] == userArray[i]) {
-            startGame()
-            // return
-        } if (aiArray[i] !== userArray[i]) {
+    
+        for (let i = 0; i < aiArray.length; i++) {
+         if (aiArray[i] !== userArray[i]) {
             gameOver()
+            break
+         } else if (aiArray[i] == userArray[i]) {
+            console.log('correct')
+            userArray = []
+            startGame()
+            break
         }
-    }
-}
+    
+}}
 
 // GAMEOVER
 
