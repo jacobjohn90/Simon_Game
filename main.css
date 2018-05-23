@@ -31,7 +31,9 @@ body {
 }
 h1 {
     margin-top: 55px;
-    margin-left: 5px;
+    margin-left: 4px;
+    font-family: 'Bungee Shade';
+    color: white;
 }
 .buttons {
     position: relative;
