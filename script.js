@@ -19,7 +19,7 @@ const error = new Audio('PressYourLuckyWhammy.mp3')
 // Computer input
 $(document).ready(function () {
     // alert('Click start to begin game! Confused? Hit that Info button')
-    $('.startButton').click(function () {
+    $('.btn-success').click(function () {
         if (gameRunning == false) {
             gameRunning = true
             aiArray = []
@@ -128,6 +128,8 @@ let gameOver = function () {
     highScore = score-1
     $('#highestScoreNumber').text(highScore)
     error.play()
+    error.currentTime = 0
+    gameRunning = false
     alert('Sorry, that was wrong. Press start to play again!')
 }
 
