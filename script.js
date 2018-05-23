@@ -144,17 +144,3 @@ let gameOver = function () {
     }, 1000)
 
 }
-
-//Hover effect
-// $('.red').hover(function(){
-//     $('.red').toggleClass('highlightClick')
-// })
-// $('.green').hover(function(){
-//     $('.green').toggleClass('highlightClick')
-// })
-// $('.blue').hover(function(){
-//     $('.blue').toggleClass('highlightClick')
-// })
-// $('.yellow').hover(function(){
-//     $('.yellow').toggleClass('highlightClick')
-// })

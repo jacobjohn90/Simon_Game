@@ -2,6 +2,7 @@
     font-family: "ATOMICCLOCKRADIO";
     src:url("ATOMICCLOCKRADIO.ttf");
 }
+/* Found this method of attaching font located in local computer on Stackoverflow */
 body {
     background-color : #333;
 }
@@ -58,6 +59,7 @@ h1 {
   background-color: rgb(48, 0, 179);
   border-color: rgb(48, 0, 179);
 }
+/* found how to edit bootstrap buttons on stackoverflow */
 .red {
     height: 49%;
     width: 49%;
@@ -122,10 +124,7 @@ h1 {
 .options {
     margin-left: 100px
 }
-/* .score {
-    display: flex;
-    margin-right: 10px;
-} */
+
 .scoreNumber {
     color: #91321C;
     font-family: "ATOMICCLOCKRADIO";
