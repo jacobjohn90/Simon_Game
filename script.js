@@ -14,13 +14,14 @@ const audio0 = new Audio('button-0.mp3')
 const audio1 = new Audio('button-1.mp3')
 const audio2 = new Audio('button-2.mp3')
 const audio3 = new Audio('button-3.mp3')
+const error = new Audio('PressYourLuckyWhammy.mp3')
 
 // Computer input
 $(document).ready(function () {
     // alert('Click start to begin game! Confused? Hit that Info button')
     $('.startButton').click(function () {
         if (gameRunning == false) {
-            // gameRunning = true
+            gameRunning = true
             aiArray = []
             userArray = []
             score = 0
@@ -34,7 +35,7 @@ $(document).ready(function () {
 
 })
 // Difficulty level
-if (difficulty ==)
+// if (difficulty ==)
 
 // Random Number Generator
 let startGame = function () {
@@ -126,6 +127,7 @@ let gameOver = function () {
     $('#scoreNumber').text('##')
     highScore = score-1
     $('#highestScoreNumber').text(highScore)
+    error.play()
     alert('Sorry, that was wrong. Press start to play again!')
 }
 

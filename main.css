@@ -12,6 +12,7 @@ body {
 .board {
     display: flex;
     margin-top: 2.5%;
+    text-align: center;
     
 }
 .bootstrap {
@@ -42,6 +43,18 @@ h1 {
     width: 350px;
     border-radius: 100%;
     margin-left: 30%;
+}
+.btn.btn-info {
+    background-color: ivory;
+    color: black;
+}
+.btn.btn-info:hover,
+.btn.btn-info:focus,
+.btn.btn-info:active,
+.btn.btn-info.active {
+  color: #ffffff;
+  background-color: rgb(48, 0, 179);
+  border-color: rgb(48, 0, 179);
 }
 .red {
     height: 49%;
