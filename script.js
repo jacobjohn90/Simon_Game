@@ -98,8 +98,8 @@ let arrayChecker = function () {
         if (aiArray[i] !== userArray[i]) {
             console.log("wrong")
             nextRound = false
-            
             gameOver()
+            break
         } else if (aiArray[i] == userArray[i]) {
             console.log('correct')
             score = userArray.length
