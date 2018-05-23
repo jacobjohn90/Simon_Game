@@ -36,14 +36,14 @@ $(document).ready(function () {
 
 })
 // Difficulty level
-$('#easy').click(function(){
-    difficulty=1000
+$('#easy').click(function () {
+    difficulty = 1000
 })
-$('#medium').click(function(){
-    difficulty=750
+$('#medium').click(function () {
+    difficulty = 750
 })
-$('#hard').click(function(){
-    difficulty=400
+$('#hard').click(function () {
+    difficulty = 400
 })
 
 // Random Number Generator
@@ -126,7 +126,8 @@ let arrayChecker = function () {
     if (nextRound === true) {
         nextRound = false
         userArray = []
-        startGame()
+        setTimeout(function() {startGame()
+        }, 200)
     }
 }
 
@@ -134,11 +135,14 @@ let arrayChecker = function () {
 
 let gameOver = function () {
     $('#scoreNumber').text('##')
-    highScore = score-1
+    highScore = score - 1
     $('#highestScoreNumber').text(highScore)
     error.play()
     gameRunning = false
-    alert('Sorry, that was wrong. Press start to play again!')
+    setTimeout(function () {
+        alert('Sorry, that was wrong. Press start to play again!')
+    }, 1000)
+
 }
 
 //Hover effect
