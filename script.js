@@ -7,6 +7,7 @@ let gameRunning = false
 let id
 let color
 let score = 0
+let highScore = 0
 
 //Sound Clips
 const audio0 = new Audio('button-0.mp3')
@@ -57,9 +58,9 @@ let changeColor = function (color) {
     $("." + color).toggleClass('highlight') // similar to the code found on stackoverflow
 
     setTimeout(function () {
-    $("." + color).toggleClass('highlight') // similar to the code found on stackoverflow
+        $("." + color).toggleClass('highlight') // similar to the code found on stackoverflow
 
-    }, 750)
+    }, 500)
 }
 
 let soundEffect = function (id) {
@@ -82,7 +83,8 @@ $('.button').click(function () {
     console.log('user input is ', userArray)
     if (userArray.length == aiArray.length) {
         arrayChecker()
-    }}
+    }
+}
 )
 
 
@@ -90,22 +92,25 @@ $('.button').click(function () {
 
 let arrayChecker = function () {
     let nextRound = false
-    for (let i=0; i < aiArray.length ; i++) {    
+    for (let i = 0; i < aiArray.length; i++) {
         // console.log("inside for")
-        console.log("i is: " + i, "userArray: " + userArray[i],"aiArray: " + aiArray[i],)
+        // console.log("i is: " + i, "userArray: " + userArray[i],"aiArray: " + aiArray[i],)
         if (aiArray[i] !== userArray[i]) {
             console.log("wrong")
             nextRound = false
-            gameOver() 
-            break
-        } if (aiArray[i] == userArray[i]) {
+            
+            gameOver()
+        } else if (aiArray[i] == userArray[i]) {
             console.log('correct')
             score = userArray.length
             $('#scoreNumber').text(score)
+            if (score > highScore) {
+                highScore = score
+                $('#highestScoreNumber').text(highScore)
+            }
             nextRound = true
         }
     }
-    
     if (nextRound === true) {
         nextRound = false
         userArray = []
@@ -116,7 +121,9 @@ let arrayChecker = function () {
 // GAMEOVER
 
 let gameOver = function () {
-    $('#number').text('##')
+    $('#scoreNumber').text('##')
+    highScore = score-1
+    $('#highestScoreNumber').text(highScore)
     alert('Sorry, that was wrong. Press start to play again!')
 }
 
