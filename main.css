@@ -14,6 +14,10 @@ body {
     margin-top: 2.5%;
     
 }
+.bootstrap {
+    background-color : #333;
+    margin-top: 5%;
+}
 .center {
     position: absolute;
     height: 150px;
@@ -22,8 +26,8 @@ body {
     border: 5px solid black;
     z-index: 1;
     border-radius: 100%;
-    top: 70px;
-    left: 70px;
+    top: 27%;
+    left: 27%;
 }
 h1 {
     margin-top: 55px;
@@ -32,19 +36,19 @@ h1 {
 .buttons {
     position: relative;
     border: 5px solid black;
-    height: 300px;
-    width: 300px;
-    border-radius: 300px;
+    height: 350px;
+    width: 350px;
+    border-radius: 100%;
     margin-left: 30%;
 }
 .red {
-    height: 147.5px;
-    width: 147.5px;
+    height: 49%;
+    width: 49%;
     border: 1px solid black;
     background-color: red;
     float: left;
     position: relative;
-    border-radius: 150px 0 0 0;
+    border-radius: 175px 0 0 0;
 }
 .red:hover {
     border: 1px solid white;
@@ -54,13 +58,13 @@ h1 {
 }
 
 .green {
-    height: 147.5px;
-    width: 147.5px;
+    height: 49%;
+    width: 49.6%;
     border: 1px solid black;
     background-color: green; 
     float: left;
     position: relative;
-    border-radius: 0 150px 0 0;
+    border-radius: 0 175px 0 0;
 }
 .green:hover {
     border: 1px solid white;
@@ -69,13 +73,13 @@ h1 {
     background-color: black;
 }
 .blue {
-    height: 147.5px;
-    width: 147.5px;
+    height: 50%;
+    width: 49%;
     border: 1px solid black;
     background-color: blue;
     float: left;
     position: relative;
-    border-radius: 0 0 0 150px;
+    border-radius: 0 0 0 175px;
 }
 .blue:hover {
     border: 1px solid white;
@@ -84,13 +88,13 @@ h1 {
     background-color: black;
 }
 .yellow {
-    height: 147.5px;
-    width: 147.5px;
+    height: 50%;
+    width: 49.6%;
     border: 1px solid black;
     background-color: yellow;
     float: left;
     position: relative;
-    border-radius: 0 0 150px 0;
+    border-radius: 0 0 175px 0;
 }
 .yellow:hover {
     border: 1px solid white;
