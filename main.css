@@ -12,8 +12,9 @@ body {
 }
 .board {
     display: flex;
-    margin-top: 2.5%;
+    margin-top: 5%;
     text-align: center;
+    margin-right: 25%;
     
 }
 .bootstrap {
@@ -49,6 +50,7 @@ h1 {
     width: 350px;
     border-radius: 100%;
     margin-left: 30%;
+    cursor: pointer;
 }
 .btn.btn-info {
     background-color: ivory;
