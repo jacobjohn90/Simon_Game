@@ -78,6 +78,7 @@ $('.button').click(function () {
     id = $(this).attr('id') //similar code to the one found on stackoverflow
     // console.log(id)
     userArray.push(Number(id))
+    soundEffect(id)
     console.log('user input is ', userArray)
     if (userArray.length == aiArray.length) {
         arrayChecker()
