@@ -37,17 +37,32 @@
             </div>
         </div>
         <div class="bootstrap">
-            <p>
-                <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                    Information
-                </button>
-            </p>
-            <div class="collapse" id="collapseExample">
-                <div class="card card-body">
-                    Welcome to the Simon game! To start the game, click that start button. The default diffuclty level is easy. Feeling adventerous?
-                    Go ahead and click and change that diffculty level. The computer will first select and flash a colored
-                    button. You just have to copy the computer. The game will continue until you can't remember the sequence
-                    anymore.
+            <div class="infoButton">
+                <p>
+                    <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                        Information
+                    </button>
+                </p>
+                <div class="collapse" id="collapseExample">
+                    <div class="card card-body">
+                        Welcome to the Simon game! To start the game, click that start button. The default diffuclty level is easy. Feeling adventerous?
+                        Go ahead and click and change that diffculty level. The computer will first select and flash a colored
+                        button. You just have to copy the computer. The game will continue until you can't remember the sequence
+                        anymore.
+                    </div>
+                </div>
+            </div>
+            <div class="difficultySetting">
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        Difficulty Setting
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                        <button class="dropdown-item" type="button">Easy</button>
+                        <button class="dropdown-item" type="button">Medium</button>
+                        <button class="dropdown-item" type="button">Hard</button>
+                    </div>
                 </div>
             </div>
         </div>

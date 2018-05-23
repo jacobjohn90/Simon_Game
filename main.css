@@ -17,7 +17,9 @@ body {
 }
 .bootstrap {
     background-color : #333;
-    margin-top: 5%;
+    margin-top: 2em;
+
+
 }
 .center {
     position: absolute;
