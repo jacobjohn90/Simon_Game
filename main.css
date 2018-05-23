@@ -4,7 +4,9 @@
 }
 /* Found this method of attaching font located in local computer on Stackoverflow */
 body {
-    background-color : #333;
+    background: url("https://4.bp.blogspot.com/-3hDCx5wKrDA/UZATKWgw-UI/AAAAAAAACmo/Mwgj_sTrffk/s1600/Descargar+Pack+Fondos+de+escritorio+Animacion+HD+(306).jpg");
+    /* background-repeat: no-repeat; */
+    background-size: 100%;
 }
 .container {
     text-align: center;
@@ -14,11 +16,19 @@ body {
     display: flex;
     margin-top: 5%;
     text-align: center;
-    margin-right: 25%;
-    
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left:21%;
+}
+.options {
+    background-color: white;
+    padding-left: 15px;
+    padding-right: 15px;
+    box-shadow: 5px 10px 50px #888888;
+    border-radius: 5px;
 }
 .bootstrap {
-    background-color : #333;
+    background-color : rgba(0,0,0,0);
     margin-top: 2em;
     margin-bottom: 5px;
     /* display: flex; */
@@ -26,11 +36,15 @@ body {
 .dropdown {
     margin-top: 10px;
 }
+.dropdown-item:hover {
+    background-color: #91321C !important;
+    color: white !important;
+}
 .center {
     position: absolute;
     height: 150px;
     width: 150px;
-    background-color: #333;
+    background-color: ivory;
     border: 5px solid black;
     z-index: 1;
     border-radius: 100%;
@@ -41,7 +55,7 @@ h1 {
     margin-top: 55px;
     margin-left: 4px;
     font-family: 'Bungee Shade';
-    color: white;
+    color: black;
 }
 .buttons {
     position: relative;
@@ -49,7 +63,7 @@ h1 {
     height: 350px;
     width: 350px;
     border-radius: 100%;
-    margin-left: 30%;
+    /* margin-left: 30%; */
     cursor: pointer;
 }
 .btn.btn-info {
