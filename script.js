@@ -7,6 +7,13 @@ let gameRunning = false
 let id
 let color
 let score = 0
+
+//Sound Clips
+const audio0 = new Audio('button-0.mp3')
+const audio1 = new Audio('button-1.mp3')
+const audio2 = new Audio('button-2.mp3')
+const audio3 = new Audio('button-3.mp3')
+
 // Computer input
 $(document).ready(function () {
     // alert('Click start to begin game! Confused? Hit that Info button')
@@ -40,46 +47,32 @@ let startGame = function () {
             color = $('#' + id).attr('class').split(" ")[0] //method found on stackoverflow
             console.log(color)
             changeColor(color)
+            soundEffect(id)
         }, 1000 * (i + 1))
     }
 }
 
 // Change color displayed
 let changeColor = function (color) {
-    $("." + color).toggleClass('highlight')
-    // if (color == 'red') {
-    //     $('.red').css('backgroundColor', '#ff6666')
-    //     $('.red').css('border', '1px solid white')
-    // } if (color == 'green') {
-    //     $('.green').css('backgroundColor', '#66ff66')
-    //     $('.green').css('border', '1px solid white')
-    // } if (color == 'blue') {
-    //     $('.blue').css('backgroundColor', '#0066ff')
-    //     $('.blue').css('border', '1px solid white')
-    // } if (color == 'yellow') {
-    //     $('.yellow').css('backgroundColor', '#ffffcc')
-    //     $('.yellow').css('border', '1px solid white')
-    // }
+    $("." + color).toggleClass('highlight') // similar to the code found on stackoverflow
+
     setTimeout(function () {
-    $("." + color).toggleClass('highlight')
-        // if (color == 'red') {
-        //     $('.red').css('backgroundColor', 'red')
-        //     $('.red').css('border', '1px solid black')
-        // } if (color == 'green') {
-        //     $('.green').css('backgroundColor', 'green')
-        //     $('.green').css('border', '1px solid black')
-        // } if (color == 'blue') {
-        //     $('.blue').css('backgroundColor', 'blue')
-        //     $('.blue').css('border', '1px solid black')
-        // } if (color == 'yellow') {
-        //     $('.yellow').css('backgroundColor', 'yellow')
-        //     $('.yellow').css('border', '1px solid black')
-        // }
+    $("." + color).toggleClass('highlight') // similar to the code found on stackoverflow
+
     }, 750)
-
-
 }
 
+let soundEffect = function (id) {
+    if (id == 0) {
+        audio0.play()
+    } else if (id == 1) {
+        audio1.play()
+    } else if (id == 2) {
+        audio2.play()
+    } else if (id == 3) {
+        audio3.play()
+    }
+}
 // Player Input
 $('.button').click(function () {
     id = $(this).attr('id') //similar code to the one found on stackoverflow
