@@ -8,6 +8,7 @@ let id
 let color
 let score = 0
 let highScore = 0
+let difficulty = 1000
 
 //Sound Clips
 const audio0 = new Audio('button-0.mp3')
@@ -35,7 +36,15 @@ $(document).ready(function () {
 
 })
 // Difficulty level
-// if (difficulty ==)
+$('#easy').click(function(){
+    difficulty=1000
+})
+$('#medium').click(function(){
+    difficulty=750
+})
+$('#hard').click(function(){
+    difficulty=400
+})
 
 // Random Number Generator
 let startGame = function () {
@@ -52,7 +61,7 @@ let startGame = function () {
             console.log(color)
             changeColor(color)
             soundEffect(id)
-        }, 1000 * (i + 1))
+        }, difficulty * (i + 1))
     }
 }
 
@@ -128,7 +137,6 @@ let gameOver = function () {
     highScore = score-1
     $('#highestScoreNumber').text(highScore)
     error.play()
-    error.currentTime = 0
     gameRunning = false
     alert('Sorry, that was wrong. Press start to play again!')
 }
