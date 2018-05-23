@@ -33,6 +33,8 @@ $(document).ready(function () {
     })
 
 })
+// Difficulty level
+if (difficulty ==)
 
 // Random Number Generator
 let startGame = function () {
