@@ -1,15 +1,15 @@
 console.log('hello')
 
 // Global Array's and variables
-let aiArray = []
-let userArray = []
+let aiArray = []                                        // the computer array. Random numbers will be put in here
+let userArray = []                                      // the user array. The user clicks will be put in here
 let gameRunning = false
 let id
 let color
 let score = 0
 let highScore = 0
-// if(localStorage.getItem('highScore') === null) {
-//     localStorage.setItem("highscore",0)}; // found on stackoverflow!
+if(localStorage.getItem('highScore') === null) {        // found on stackoverflow!
+    localStorage.setItem("highscore",0)};               
 let difficulty = 1000
 
 //Sound Clips
@@ -49,12 +49,7 @@ $('#hard').click(function () {
 let startGame = function () {
     let randomNumber = Math.floor(Math.random() * 4)
     aiArray.push(randomNumber)
-    score = aiArray.length
-    $('#scoreNumber').text(score)
-    if (score > highScore) {
-        highScore = score
-        $('#highestScoreNumber').text(highScore)
-    }
+    currentLevel()
     for (let i = 0; i < aiArray.length; i++) {          // loop through aiArray
         setTimeout(function () {                        // for each item, wait a certain amount of time, depending on difficulty
             id = aiArray[i]
@@ -65,6 +60,21 @@ let startGame = function () {
             soundEffect(id)
         }, difficulty * (i + 1))                        // difficulty level determines how long the setTimout will be
     }
+}
+
+// Current Level and highest Level
+let currentLevel = function () {
+    score = aiArray.length                              // this sets the current level and highest level acheived
+    $('#scoreNumber').text(score)
+    // if (score > highScore) {
+    //     highScore = score
+    //     $('#highestScoreNumber').text(highScore)
+    // }
+    if (score > parseInt(localStorage.getItem("highscore"))) {   //found this on stackoverflow
+            localStorage.setItem("highscore", score);
+            highScore = parseInt(localStorage.getItem("highscore"))
+            $('#highestScoreNumber').text(highScore)
+          }
 }
 
 // Change color displayed
@@ -115,11 +125,7 @@ let arrayChecker = function () {
             nextRound = true
             // score = aiArray.length
             // $('#scoreNumber').text(score)
-            // if (score > parseInt(localStorage.getItem("highscore"))) {   //found this on stackoverflow
-            //     localStorage.setItem("highscore", score);
-            //     highScore = parseInt(localStorage.getItem("highscore"))
-            //     $('#highestScoreNumber').text(highScore)
-            //   }
+            // 
         }
     }
     if (nextRound === true) {
