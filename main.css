@@ -147,7 +147,13 @@ h1 {
 .options {
     margin-left: 100px
 }
-
+.score {
+    margin-top: 30px;
+}
+h3 {
+    font-family: 'Comfortaa';
+    margin-bottom: 4px;
+}
 .scoreNumber {
     color: #91321C;
     font-family: "ATOMICCLOCKRADIO";
