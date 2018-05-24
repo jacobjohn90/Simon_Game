@@ -145,7 +145,7 @@ let arrayChecker = function () {
 
 let gameOver = function () {
     $('#scoreNumber').text('##')
-    if (score > highScore) {
+    if (aiArray.length = userArray.length) {
         highScore = score - 1
         $('#highestScoreNumber').text(highScore)
     }
