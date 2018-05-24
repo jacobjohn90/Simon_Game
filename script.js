@@ -7,7 +7,9 @@ let gameRunning = false
 let id
 let color
 let score = 0
-let highScore = 0 // found on stackoverflow!
+let highScore = 0 
+if(localStorage.getItem('highScore') === null) {
+    localStorage.setItem("highscore",0)}; // found on stackoverflow!
 let difficulty = 1000
 
 //Sound Clips
@@ -117,10 +119,15 @@ let arrayChecker = function () {
             console.log('correct')
             score = userArray.length
             $('#scoreNumber').text(score)
-            if (score > highScore) {
-                highScore = score
+            if (score > parseInt(localStorage.getItem("highscore"))) {
+                localStorage.setItem("highscore", score);
+                highScore = parseInt(localStorage.getItem("highscore"))
                 $('#highestScoreNumber').text(highScore)
-            }
+              }
+            // if (score > highScore) {
+            //     highScore = score
+            //     $('#highestScoreNumber').text(highScore)
+            // }
             nextRound = true
         }
     }
