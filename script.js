@@ -23,7 +23,7 @@ const correct = new Audio('level_up.mp3')               // chime when the entire
 
 // Computer input
 $(document).ready(function () {
-    alert('Click start to begin game! Confused? Hit that Info button')
+    setTimeout(function(){alert('Click start to begin game! Confused? Hit that Info button')}, 500)
     $('.btn-success').click(function () {
         if (gameRunning == false) {                     //start button becomes inactive during the game
             gameRunning = true
