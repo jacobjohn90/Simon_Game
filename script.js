@@ -16,6 +16,7 @@ const audio1 = new Audio('button-1.mp3')
 const audio2 = new Audio('button-2.mp3')
 const audio3 = new Audio('button-3.mp3')
 const error = new Audio('PressYourLuckyWhammy.mp3')
+const correct = new Audio('level_up.mp3')
 
 // Computer input
 $(document).ready(function () {
@@ -52,7 +53,7 @@ let startGame = function () {
     aiArray.push(randomNumber)
 
     // loop through aiArray
-    // for each item, wait 1000
+    // for each item, wait a certain amount of time, depending on difficulty
     for (let i = 0; i < aiArray.length; i++) {
         setTimeout(function () {
             id = aiArray[i]
@@ -126,9 +127,10 @@ let arrayChecker = function () {
     if (nextRound === true) {
         nextRound = false
         userArray = []
+        correct.play()
         setTimeout(function () {
             startGame()
-        }, 200)
+        }, 500)
     }
 }
 

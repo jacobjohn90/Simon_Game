@@ -162,7 +162,8 @@ h1 {
     color: lime;
 }
 .highlight {
-    opacity: .7;
+    background-color: white;
+    opacity: .5;
     border: 1px solid white;
 }
 .highlightClick {
