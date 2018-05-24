@@ -137,7 +137,7 @@ let gameOver = function () {
     $('#scoreNumber').text('##')
     error.play()
     gameRunning = false
-    setTimeout(function () {
+    setTimeout(function () {                                    // Used this setTimout to allow the error sound to finish playing. If user okayed the alert before sound finished playing, an error would occur.
         alert('Sorry, that was wrong. Press start to play again!')
     }, 1000)
 
