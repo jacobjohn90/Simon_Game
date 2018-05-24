@@ -7,7 +7,7 @@ let gameRunning = false
 let id
 let color
 let score = 0
-let highScore = 0
+let highScore = 0 // found on stackoverflow!
 let difficulty = 1000
 
 //Sound Clips
@@ -138,8 +138,10 @@ let arrayChecker = function () {
 
 let gameOver = function () {
     $('#scoreNumber').text('##')
-    highScore = score - 1
-    $('#highestScoreNumber').text(highScore)
+    if (score > highScore) {
+        highScore = score - 1
+        $('#highestScoreNumber').text(highScore)
+    }
     error.play()
     gameRunning = false
     setTimeout(function () {
