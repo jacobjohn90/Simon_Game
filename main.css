@@ -18,26 +18,14 @@ body {
     padding-bottom: 20px;
     padding-left:21%;
 }
-.options {
-    background-color: rgba(255, 183, 0, 0.7);
-    /* opacity: 0.9; */
-    padding-left: 15px;
-    padding-right: 15px;
-    box-shadow: 5px 10px 50px #ffffff;
-    border-radius: 15px;
-}
-.bootstrap {
-    background-color : rgba(0,0,0,0);
-    margin-top: 2em;
-    margin-bottom: 5px;
-    /* display: flex; */
-}
-.dropdown {
-    margin-top: 10px;
-}
-.dropdown-item:hover {
-    background-color: #91321C !important;
-    color: white !important;
+.buttons {
+    position: relative;
+    border: 5px solid black;
+    height: 350px;
+    width: 350px;
+    border-radius: 100%;
+    /* margin-left: 30%; */
+    cursor: pointer;
 }
 .center {
     position: absolute;
@@ -56,29 +44,6 @@ h1 {
     font-family: 'Bungee Shade';
     color: black;
 }
-.buttons {
-    position: relative;
-    border: 5px solid black;
-    height: 350px;
-    width: 350px;
-    border-radius: 100%;
-    /* margin-left: 30%; */
-    cursor: pointer;
-}
-.btn.btn-info {
-    background-color: ivory;
-    opacity: 0.9;
-    color: black;
-}
-.btn.btn-info:hover,
-.btn.btn-info:focus,
-.btn.btn-info:active,
-.btn.btn-info.active {
-  color: #ffffff;
-  background-color: rgba(255, 183, 0, 0.7);
-  border-color: rgb(48, 0, 179);
-}
-/* found how to edit bootstrap buttons on stackoverflow */
 .red {
     height: 49%;
     width: 49%;
@@ -145,8 +110,42 @@ h1 {
     background-color: black;
 }
 .options {
+    background-color: rgba(255, 183, 0, 0.7);
+    /* opacity: 0.9; */
+    padding-left: 15px;
+    padding-right: 15px;
+    box-shadow: 5px 10px 50px #ffffff;
+    border-radius: 15px;
     margin-left: 100px
 }
+.bootstrap {
+    background-color : rgba(0,0,0,0);
+    margin-top: 2em;
+    margin-bottom: 5px;
+    /* display: flex; */
+}
+.dropdown {
+    margin-top: 10px;
+}
+.dropdown-item:hover {
+    background-color: #91321C !important;
+    color: white !important;
+}
+.btn.btn-info {
+    background-color: ivory;
+    opacity: 0.9;
+    color: black;
+}
+.btn.btn-info:hover,
+.btn.btn-info:focus,
+.btn.btn-info:active,
+.btn.btn-info.active {
+  color: #ffffff;
+  background-color: rgba(255, 183, 0, 0.7);
+  border-color: rgb(48, 0, 179);
+}
+/* found how to edit bootstrap buttons on stackoverflow */
+
 .score {
     margin-top: 30px;
 }

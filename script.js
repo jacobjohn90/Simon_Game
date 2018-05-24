@@ -7,36 +7,32 @@ let gameRunning = false
 let id
 let color
 let score = 0
-let highScore = 0 
+let highScore = 0
 // if(localStorage.getItem('highScore') === null) {
 //     localStorage.setItem("highscore",0)}; // found on stackoverflow!
 let difficulty = 1000
 
 //Sound Clips
-const audio0 = new Audio('button-0.mp3')
-const audio1 = new Audio('button-1.mp3')
-const audio2 = new Audio('button-2.mp3')
-const audio3 = new Audio('button-3.mp3')
-const error = new Audio('PressYourLuckyWhammy.mp3')
-const correct = new Audio('level_up.mp3')
+const audio0 = new Audio('button-0.mp3')                // red chime
+const audio1 = new Audio('button-1.mp3')                // green chime
+const audio2 = new Audio('button-2.mp3')                // blue chime
+const audio3 = new Audio('button-3.mp3')                // yellow chime
+const error = new Audio('PressYourLuckyWhammy.mp3')     // chime when user gets sequence wrong
+const correct = new Audio('level_up.mp3')               // chime when the entire user sequence is correct
 
 // Computer input
 $(document).ready(function () {
-    // alert('Click start to begin game! Confused? Hit that Info button')
+    alert('Click start to begin game! Confused? Hit that Info button')
     $('.btn-success').click(function () {
-        if (gameRunning == false) {
+        if (gameRunning == false) {                     //start button becomes inactive during the game
             gameRunning = true
             aiArray = []
             userArray = []
             score = 0
             $('#scoreNumber').text('0')
-            startGame() // star game function
-
-
-
+            startGame()                                 // star game function
         }
     })
-
 })
 // Difficulty level
 $('#easy').click(function () {
@@ -59,31 +55,29 @@ let startGame = function () {
         highScore = score
         $('#highestScoreNumber').text(highScore)
     }
-
-    // loop through aiArray
-    // for each item, wait a certain amount of time, depending on difficulty
-    for (let i = 0; i < aiArray.length; i++) {
-        setTimeout(function () {
+    for (let i = 0; i < aiArray.length; i++) {          // loop through aiArray
+        setTimeout(function () {                        // for each item, wait a certain amount of time, depending on difficulty
             id = aiArray[i]
             // console.log(id)
-            color = $('#' + id).attr('class').split(" ")[0] //method found on stackoverflow
+            color = $('#' + id).attr('class').split(" ")[0]  //method found on stackoverflow
             console.log(color)
             changeColor(color)
             soundEffect(id)
-        }, difficulty * (i + 1))
+        }, difficulty * (i + 1))                        // difficulty level determines how long the setTimout will be
     }
 }
 
 // Change color displayed
 let changeColor = function (color) {
-    $("." + color).toggleClass('highlight') // similar to the code found on stackoverflow
+    $("." + color).toggleClass('highlight')             // similar to the code found on stackoverflow
 
     setTimeout(function () {
-        $("." + color).toggleClass('highlight') // similar to the code found on stackoverflow
+        $("." + color).toggleClass('highlight')         // similar to the code found on stackoverflow
 
     }, 500)
 }
 
+// Sound effect after computer selection and user click
 let soundEffect = function (id) {
     if (id == 0) {
         audio0.play()
@@ -95,23 +89,17 @@ let soundEffect = function (id) {
         audio3.play()
     }
 }
+
 // Player Input
 $('.button').click(function () {
-    id = $(this).attr('id') //similar code to the one found on stackoverflow
-    // console.log(id)
+    id = $(this).attr('id')                             //similar code to the one found on stackoverflow
     userArray.push(Number(id))
     soundEffect(id)
     console.log('user input is ', userArray)
-
-    // if (userArray.length == aiArray.length) {
     arrayChecker()
-    // }
-}
-)
-
+})
 
 // Checking if array's are the same
-
 let arrayChecker = function () {
     let nextRound = false
     for (let i = 0; i < userArray.length; i++) {
@@ -124,6 +112,7 @@ let arrayChecker = function () {
             break
         } else if (aiArray.length == userArray.length) {
             console.log('correct')
+            nextRound = true
             // score = aiArray.length
             // $('#scoreNumber').text(score)
             // if (score > parseInt(localStorage.getItem("highscore"))) {   //found this on stackoverflow
@@ -131,8 +120,6 @@ let arrayChecker = function () {
             //     highScore = parseInt(localStorage.getItem("highscore"))
             //     $('#highestScoreNumber').text(highScore)
             //   }
-            
-            nextRound = true
         }
     }
     if (nextRound === true) {
@@ -146,7 +133,6 @@ let arrayChecker = function () {
 }
 
 // GAMEOVER
-
 let gameOver = function () {
     $('#scoreNumber').text('##')
     error.play()
