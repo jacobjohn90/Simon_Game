@@ -7,10 +7,10 @@ Welcome to the Simon game Readme! The basic gist of the game is:
 <h4>Wireframe</h4>: https://imgur.com/a/ad806vt <br />
 
 
-<h4>Technologies, Libraries, and/or Frameworks</h4><br />>
-    - bootstrap <br />>
-    - jQuery <br />>
-    - Popper.js <br />>
+<h4>Technologies, Libraries, and/or Frameworks</h4><br />
+    - bootstrap <br />
+    - jQuery <br />
+    - Popper.js <br />
 
 
 <h4>Things to change/implement in V2</h4> <br />
