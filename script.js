@@ -8,8 +8,8 @@ let id
 let color
 let score = 0
 let highScore = 0 
-if(localStorage.getItem('highScore') === null) {
-    localStorage.setItem("highscore",0)}; // found on stackoverflow!
+// if(localStorage.getItem('highScore') === null) {
+//     localStorage.setItem("highscore",0)}; // found on stackoverflow!
 let difficulty = 1000
 
 //Sound Clips
@@ -53,6 +53,12 @@ $('#hard').click(function () {
 let startGame = function () {
     let randomNumber = Math.floor(Math.random() * 4)
     aiArray.push(randomNumber)
+    score = aiArray.length
+    $('#scoreNumber').text(score)
+    if (score > highScore) {
+        highScore = score
+        $('#highestScoreNumber').text(highScore)
+    }
 
     // loop through aiArray
     // for each item, wait a certain amount of time, depending on difficulty
@@ -96,6 +102,7 @@ $('.button').click(function () {
     userArray.push(Number(id))
     soundEffect(id)
     console.log('user input is ', userArray)
+
     // if (userArray.length == aiArray.length) {
     arrayChecker()
     // }
@@ -117,17 +124,14 @@ let arrayChecker = function () {
             break
         } else if (aiArray.length == userArray.length) {
             console.log('correct')
-            score = userArray.length
-            $('#scoreNumber').text(score)
-            if (score > parseInt(localStorage.getItem("highscore"))) {
-                localStorage.setItem("highscore", score);
-                highScore = parseInt(localStorage.getItem("highscore"))
-                $('#highestScoreNumber').text(highScore)
-              }
-            // if (score > highScore) {
-            //     highScore = score
+            // score = aiArray.length
+            // $('#scoreNumber').text(score)
+            // if (score > parseInt(localStorage.getItem("highscore"))) {   //found this on stackoverflow
+            //     localStorage.setItem("highscore", score);
+            //     highScore = parseInt(localStorage.getItem("highscore"))
             //     $('#highestScoreNumber').text(highScore)
-            // }
+            //   }
+            
             nextRound = true
         }
     }
@@ -145,10 +149,6 @@ let arrayChecker = function () {
 
 let gameOver = function () {
     $('#scoreNumber').text('##')
-    if (aiArray.length = userArray.length) {
-        highScore = score - 1
-        $('#highestScoreNumber').text(highScore)
-    }
     error.play()
     gameRunning = false
     setTimeout(function () {
