@@ -5,27 +5,26 @@
 /* Found this method of attaching font located in local computer on Stackoverflow */
 body {
     background: url("https://4.bp.blogspot.com/-3hDCx5wKrDA/UZATKWgw-UI/AAAAAAAACmo/Mwgj_sTrffk/s1600/Descargar+Pack+Fondos+de+escritorio+Animacion+HD+(306).jpg");
-    /* background-repeat: no-repeat; */
+    background-repeat: no-repeat;
     background-size: 100%;
 }
 .container {
     text-align: center;
-    /* display: inline */
 }
 .board {
     display: flex;
-    margin-top: 5%;
-    text-align: center;
+    margin-top: 6%;
     padding-top: 20px;
     padding-bottom: 20px;
     padding-left:21%;
 }
 .options {
-    background-color: white;
+    background-color: rgba(255, 183, 0, 0.7);
+    /* opacity: 0.9; */
     padding-left: 15px;
     padding-right: 15px;
     box-shadow: 5px 10px 50px #888888;
-    border-radius: 5px;
+    border-radius: 15px;
 }
 .bootstrap {
     background-color : rgba(0,0,0,0);
@@ -68,6 +67,7 @@ h1 {
 }
 .btn.btn-info {
     background-color: ivory;
+    opacity: 0.9;
     color: black;
 }
 .btn.btn-info:hover,
@@ -75,7 +75,7 @@ h1 {
 .btn.btn-info:active,
 .btn.btn-info.active {
   color: #ffffff;
-  background-color: rgb(48, 0, 179);
+  background-color: rgba(255, 183, 0, 0.7);
   border-color: rgb(48, 0, 179);
 }
 /* found how to edit bootstrap buttons on stackoverflow */
@@ -89,6 +89,7 @@ h1 {
     border-radius: 175px 0 0 0;
 }
 .red:hover {
+    opacity: .7;
     border: 1px solid white;
 }
 .red:active {
@@ -105,6 +106,7 @@ h1 {
     border-radius: 0 175px 0 0;
 }
 .green:hover {
+    opacity: .7;
     border: 1px solid white;
 }
 .green:active {
@@ -120,6 +122,7 @@ h1 {
     border-radius: 0 0 0 175px;
 }
 .blue:hover {
+    opacity: .7;
     border: 1px solid white;
 }
 .blue:active {
@@ -135,6 +138,7 @@ h1 {
     border-radius: 0 0 175px 0;
 }
 .yellow:hover {
+    opacity: .7;
     border: 1px solid white;
 }
 .yellow:active {
@@ -158,7 +162,7 @@ h1 {
     color: lime;
 }
 .highlight {
-    opacity: .4;
+    opacity: .7;
     border: 1px solid white;
 }
 .highlightClick {
