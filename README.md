@@ -14,4 +14,4 @@ Technologies, Libraries, and/or Frameworks used:
 
 
 Things to change/implement in V2:
-    I would love to be able to have the highest level remain even after a browser refresh. I think this goes along to the side of back end development, so hopefully one day this will be implemented! Also, while the game is active, you're able to change the difficulty level. I would like it to remain the same difficulty level until the game is over.
+    I would love to be able to have the highest level remain even after a browser refresh. I think this goes along to the side of back end development, so hopefully one day this will be implemented! Also, while the game is active, you're able to change the difficulty level. I would like it to remain the same difficulty level until the game is over. Also, it would be great if this was responsive.

@@ -8,8 +8,9 @@ let id
 let color
 let score = 0
 let highScore = 0
-if(localStorage.getItem('highScore') === null) {        // found on stackoverflow!
-    localStorage.setItem("highscore",0)};               
+if (localStorage.getItem('highScore') === null) {        // found on stackoverflow!
+    localStorage.setItem("highscore", 0)
+};
 let difficulty = 1000
 
 //Sound Clips
@@ -37,12 +38,15 @@ $(document).ready(function () {
 // Difficulty level
 $('#easy').click(function () {
     difficulty = 1000
+    $('#dropdownMenu2').html('Easy')
 })
 $('#medium').click(function () {
     difficulty = 750
+    $('#dropdownMenu2').html('Medium')
 })
 $('#hard').click(function () {
     difficulty = 400
+    $('#dropdownMenu2').html('Hard')
 })
 
 // Random Number Generator
@@ -71,10 +75,10 @@ let currentLevel = function () {
     //     $('#highestScoreNumber').text(highScore)
     // }
     if (score > parseInt(localStorage.getItem("highscore"))) {   //found this on stackoverflow
-            localStorage.setItem("highscore", score);
-            highScore = parseInt(localStorage.getItem("highscore"))
-            $('#highestScoreNumber').text(highScore)
-          }
+        localStorage.setItem("highscore", score);
+        highScore = parseInt(localStorage.getItem("highscore"))
+        $('#highestScoreNumber').text(highScore)
+    }
 }
 
 // Change color displayed
@@ -106,7 +110,9 @@ $('.button').click(function () {
     userArray.push(Number(id))
     soundEffect(id)
     console.log('user input is ', userArray)
-    arrayChecker()
+    if (gameRunning == true) {
+        arrayChecker()
+    }
 })
 
 // Checking if array's are the same
