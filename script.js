@@ -93,9 +93,9 @@ $('.button').click(function () {
     userArray.push(Number(id))
     soundEffect(id)
     console.log('user input is ', userArray)
-    if (userArray.length == aiArray.length) {
-        arrayChecker()
-    }
+    // if (userArray.length == aiArray.length) {
+    arrayChecker()
+    // }
 }
 )
 
@@ -104,7 +104,7 @@ $('.button').click(function () {
 
 let arrayChecker = function () {
     let nextRound = false
-    for (let i = 0; i < aiArray.length; i++) {
+    for (let i = 0; i < userArray.length; i++) {
         // console.log("inside for")
         // console.log("i is: " + i, "userArray: " + userArray[i],"aiArray: " + aiArray[i],)
         if (aiArray[i] !== userArray[i]) {
@@ -112,7 +112,7 @@ let arrayChecker = function () {
             nextRound = false
             gameOver()
             break
-        } else if (aiArray[i] == userArray[i]) {
+        } else if (aiArray.length == userArray.length) {
             console.log('correct')
             score = userArray.length
             $('#scoreNumber').text(score)
@@ -126,7 +126,8 @@ let arrayChecker = function () {
     if (nextRound === true) {
         nextRound = false
         userArray = []
-        setTimeout(function() {startGame()
+        setTimeout(function () {
+            startGame()
         }, 200)
     }
 }
