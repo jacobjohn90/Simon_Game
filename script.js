@@ -57,7 +57,6 @@ let startGame = function () {
     for (let i = 0; i < aiArray.length; i++) {          // loop through aiArray
         setTimeout(function () {                        // for each item, wait a certain amount of time, depending on difficulty
             id = aiArray[i]
-            // console.log(id)
             color = $('#' + id).attr('class').split(" ")[0]  //method found on stackoverflow
             console.log(color)
             changeColor(color)
@@ -70,10 +69,6 @@ let startGame = function () {
 let currentLevel = function () {
     score = aiArray.length                              // this sets the current level and highest level acheived
     $('#scoreNumber').text(score)
-    // if (score > highScore) {
-    //     highScore = score
-    //     $('#highestScoreNumber').text(highScore)
-    // }
     if (score > parseInt(localStorage.getItem("highscore"))) {   //found this on stackoverflow
         localStorage.setItem("highscore", score);
         highScore = parseInt(localStorage.getItem("highscore"))
@@ -119,8 +114,6 @@ $('.button').click(function () {
 let arrayChecker = function () {
     let nextRound = false
     for (let i = 0; i < userArray.length; i++) {
-        // console.log("inside for")
-        // console.log("i is: " + i, "userArray: " + userArray[i],"aiArray: " + aiArray[i],)
         if (aiArray[i] !== userArray[i]) {
             console.log("wrong")
             nextRound = false
@@ -129,9 +122,6 @@ let arrayChecker = function () {
         } else if (aiArray.length == userArray.length) {
             console.log('correct')
             nextRound = true
-            // score = aiArray.length
-            // $('#scoreNumber').text(score)
-            // 
         }
     }
     if (nextRound === true) {
