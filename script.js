@@ -1,5 +1,3 @@
-console.log('hello')
-
 // Global Array's and variables
 let aiArray = []                                        // the computer array. Random numbers will be put in here
 let userArray = []                                      // the user array. The user clicks will be put in here
@@ -14,16 +12,16 @@ if (localStorage.getItem('highScore') === null) {        // found on stackoverfl
 let difficulty = 1000
 
 //Sound Clips
-const audio0 = new Audio('button-0.mp3')                // red chime
-const audio1 = new Audio('button-1.mp3')                // green chime
-const audio2 = new Audio('button-2.mp3')                // blue chime
-const audio3 = new Audio('button-3.mp3')                // yellow chime
-const error = new Audio('PressYourLuckyWhammy.mp3')     // chime when user gets sequence wrong
-const correct = new Audio('level_up.mp3')               // chime when the entire user sequence is correct
+const audio0 = new Audio('./chimes/button-0.mp3')                // red chime
+const audio1 = new Audio('./chimes/button-1.mp3')                // green chime
+const audio2 = new Audio('./chimes/button-2.mp3')                // blue chime
+const audio3 = new Audio('./chimes/button-3.mp3')                // yellow chime
+const error = new Audio('./chimes/PressYourLuckyWhammy.mp3')     // chime when user gets sequence wrong
+const correct = new Audio('./chimes/level_up.mp3')               // chime when the entire user sequence is correct
 
 // Computer input
 $(document).ready(function () {
-    setTimeout(function(){alert('Click start to begin game! Confused? Hit that Info button')}, 500)
+    setTimeout(function(){swal('Click start to begin game! Confused? Hit that Info button')}, 500)
     $('.btn-success').click(function () {
         if (gameRunning == false) {                     //start button becomes inactive during the game
             gameRunning = true
@@ -140,7 +138,7 @@ let gameOver = function () {
     error.play()
     gameRunning = false
     setTimeout(function () {                                    // Used this setTimout to allow the error sound to finish playing. If user okayed the alert before sound finished playing, an error would occur.
-        alert('Sorry, that was wrong. Press start to play again!')
+        swal('Sorry, that was wrong. Press start to play again!')
     }, 1000)
 
 }
