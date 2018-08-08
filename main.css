@@ -4,9 +4,11 @@
 }
 /* Found this method of attaching font located in local computer on Stackoverflow */
 body {
-    background: url("https://4.bp.blogspot.com/-3hDCx5wKrDA/UZATKWgw-UI/AAAAAAAACmo/Mwgj_sTrffk/s1600/Descargar+Pack+Fondos+de+escritorio+Animacion+HD+(306).jpg");
+    background: url(./images/background.jpg);
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-position: top;
+    background-size: cover;
+    background-attachment: fixed;
 }
 .container {
     text-align: center;
@@ -14,9 +16,8 @@ body {
 .board {
     display: flex;
     margin-top: 6%;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    padding-left:21%;
+    padding: 20px 0;
+    justify-content: space-evenly;
 }
 .buttons {
     position: relative;
@@ -170,4 +171,26 @@ h3 {
 }
 .highlightClick {
     border: 1px solid white
+}
+
+@media(max-width: 650px){
+    .board {
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        padding-top: 0;
+    }
+    .options {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 10px 0;
+    }
+    .bootstrap {
+        margin: 0 5vw 0 0;
+    }
+    .score {
+        margin: 0;
+    }
 }
