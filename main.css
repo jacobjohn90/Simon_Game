@@ -123,7 +123,7 @@ h1 {
     margin-bottom: 5px;
 }
 .dropdown {
-    margin-top: 10px;
+    margin-bottom: 10px;
 }
 .dropdown-item:hover {
     background-color: #91321C !important;
